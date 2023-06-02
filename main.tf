@@ -2,8 +2,7 @@
 
 provider "aws" {
   region = "us-west-1"  # Replace with your desired region
-  access_key = "\"
-  secret_key = "\"
+ 
 }
 
 
