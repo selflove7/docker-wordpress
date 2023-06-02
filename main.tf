@@ -2,8 +2,8 @@
 
 provider "aws" {
   region = "us-west-1"  # Replace with your desired region
-  access_key = "AKIAQ4ZYCOX4736HIJVU"
-  secret_key = "yHT9HeyVvhTGIFhXZz5cDDeP614W87C/MmLfpHlU"
+  access_key = "\"
+  secret_key = "\"
 }
 
 
@@ -11,7 +11,7 @@ provider "aws" {
 # Create a VPC
 
 resource "aws_vpc" "wordpress_vpc" {
-  cidr_block = "12.0.0.0/16"
+  cidr_block = "10.0.0.0/16"
 	
 	tags = {
 		Name = "wordpress-vpc"
@@ -23,7 +23,7 @@ resource "aws_vpc" "wordpress_vpc" {
 
 resource "aws_subnet" "wordpress_public_subnet" {
   vpc_id     = aws_vpc.wordpress_vpc.id
-  cidr_block = "12.0.1.0/24"
+  cidr_block = "10.0.1.0/24"
 
 	tags = {
 		Name = "wordpress-public-subnet"
@@ -34,7 +34,7 @@ resource "aws_subnet" "wordpress_public_subnet" {
 
 resource "aws_subnet" "wordpress_private_subnet" {
   vpc_id     = aws_vpc.wordpress_vpc.id
-  cidr_block = "12.0.2.0/24"
+  cidr_block = "10.0.2.0/24"
 
 	tags = {
 		Name = "wordpress-private-subnet"
