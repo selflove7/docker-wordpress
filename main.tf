@@ -14,7 +14,7 @@ resource "aws_vpc" "wordpress_vpc" {
   cidr_block = "10.0.0.0/16"
 	
 	tags = {
-		Name = "wordpress-vpc"
+		Name = "Wordpress-Vpc"
 	}
 }
 
@@ -26,7 +26,7 @@ resource "aws_subnet" "wordpress_public_subnet" {
   cidr_block = "10.0.1.0/24"
 
 	tags = {
-		Name = "wordpress-public-subnet"
+		Name = "Wordpress-Public-Subnet"
 	}		
 }
 
@@ -37,7 +37,7 @@ resource "aws_subnet" "wordpress_private_subnet" {
   cidr_block = "10.0.2.0/24"
 
 	tags = {
-		Name = "wordpress-private-subnet"
+		Name = "Wordpress-Private-Subnet"
 	}
 }
 
@@ -47,7 +47,7 @@ resource "aws_route_table" "wordpress_public_rt" {
   vpc_id = aws_vpc.wordpress_vpc.id
 
 	tags = {
-		Name = "wordpress-public-rt"
+		Name = "Wordpress-Public-Rt"
 	}
 }
 
@@ -66,7 +66,7 @@ resource "aws_route_table" "wordpress_private_rt" {
   vpc_id = aws_vpc.wordpress_vpc.id
 
 	tags = {
-		Name = "wordpress-private-rt"
+		Name = "Wordpress-Private-Rt"
 	}
 }
 
@@ -87,7 +87,7 @@ resource "aws_internet_gateway" "wordpress_igw" {
   vpc_id = aws_vpc.wordpress_vpc.id
 
 	tags = {
-		Name = "wordpress-igw"
+		Name = "Wordpress-Igw"
   }
 }
 
@@ -141,7 +141,7 @@ resource "aws_security_group" "wordpress_public_sg" {
   }	
 
 	tags = {
-		Name = "wordpress-public-sg"
+		Name = "Wordpress-Public-Sg"
 	}
 
 }
@@ -159,7 +159,7 @@ resource "aws_security_group" "wordpress_private_sg" {
     cidr_blocks = ["10.0.1.0/24"]  # Update with the public subnet CIDR range
   }
 	tags = {
-		Name = "wordpress-private-sg"
+		Name = "Wordpress-Private-Sg"
 	}
 
 }
@@ -178,7 +178,7 @@ resource "aws_instance" "wordpress_instance" {
   associate_public_ip_address = true  # Enable a public IP address for the instance
 
   tags = {
-    Name = "wordpress"
+    Name = "Wordpress-Server"
   }
 }
 
