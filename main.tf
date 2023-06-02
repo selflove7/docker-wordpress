@@ -2,7 +2,8 @@
 
 provider "aws" {
   region = "us-west-1"  # Replace with your desired region
- 
+  access_key = "" 	# Enter Your Access Key
+  secret_key = "" 	# Enter You Secert Key
 }
 
 
@@ -130,6 +131,15 @@ resource "aws_security_group" "wordpress_public_sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+ 
+ # Allow all outbound traffic
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = -1
+    cidr_blocks = ["0.0.0.0/0"]
+  }	
+
 	tags = {
 		Name = "wordpress-public-sg"
 	}
@@ -146,7 +156,7 @@ resource "aws_security_group" "wordpress_private_sg" {
     from_port   = 3306
     to_port     = 3306
     protocol    = "tcp"
-    cidr_blocks = ["12.0.1.0/24"]  # Update with the public subnet CIDR range
+    cidr_blocks = ["10.0.1.0/24"]  # Update with the public subnet CIDR range
   }
 	tags = {
 		Name = "wordpress-private-sg"
