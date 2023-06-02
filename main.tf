@@ -156,7 +156,7 @@ resource "aws_security_group" "wordpress_private_sg" {
     from_port   = 3306
     to_port     = 3306
     protocol    = "tcp"
-    cidr_blocks = ["10.0.1.0/24"]  # Update with the public subnet CIDR range
+    cidr_blocks = ["10.0.1.0/24"] 
   }
 	tags = {
 		Name = "Wordpress-Private-Sg"
@@ -170,12 +170,12 @@ resource "aws_security_group" "wordpress_private_sg" {
 # Create an EC2 instance
 
 resource "aws_instance" "wordpress_instance" {
-  ami                    = "ami-0f8e81a3da6e2510a"  # Replace with your desired AMI ID
+  ami                    = "ami-08e5424edfe926b43" 
   instance_type          = "t2.micro"
   subnet_id              = aws_subnet.wordpress_public_subnet.id
   vpc_security_group_ids = [aws_security_group.wordpress_public_sg.id]
-  key_name               = "North"  # Replace with the name of your key pair
-  associate_public_ip_address = true  # Enable a public IP address for the instance
+  key_name               = "Wordpress"  
+  associate_public_ip_address = true  
 
   tags = {
     Name = "Wordpress-Server"
