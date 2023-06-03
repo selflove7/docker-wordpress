@@ -84,7 +84,7 @@ Once the VM is provisioned, access the public IP/DNS to verify its availability.
             
 Confirm the destruction by entering <b> "yes" </b> when prompted.
 
-
+<h3> OUTPUT </h3>
 
 ![Screenshot_601](https://github.com/selflove7/docker-wordpress/assets/115529646/290b4614-0b97-467d-829c-321b08fa0d91)
 
@@ -97,7 +97,7 @@ Confirm the destruction by entering <b> "yes" </b> when prompted.
 
 
 
-<h2> 3. Build the Docker image, Tag the image and Push the Docker image to Docker Hub and Run the container </h2>
+<h2> Step 3. Build the Docker image, Tag the image and Push the Docker image to Docker Hub and Run the container </h2>
 
 <b> Build the Docker image </b>
 
@@ -113,8 +113,6 @@ Confirm the destruction by entering <b> "yes" </b> when prompted.
     
         docker tag my-wordpress:latest 91469/my-wordpress:v1.0.0
         
-![Screenshot_606](https://github.com/selflove7/docker-wordpress/assets/115529646/587a88b6-a168-49ff-8aee-f4eee9519525)
-
 <b> Push the Docker image to Docker Hub </b> 
         
         docker push 91469/my-wordpress:v1.0.0
