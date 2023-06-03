@@ -208,5 +208,34 @@ In this step, we will deploy a relational database service (RDS) on AWS in a pri
 Make sure to note down the RDS connection details, such as the <b> endpoint URL, port, database name, master username, and password, </b> as you will need these details to establish the connection between the WordPress container and the RDS database in the next step.
 
 
+<h2> To connect your WordPress container with the RDS database </h2>
+
+Access the WordPress application through its public IP or DNS.
+
+Perform necessary WordPress setup steps (e.g., providing website information, creating an admin account).
+
+During the setup, WordPress will attempt to establish a connection with the RDS database using the provided connection details. Make sure the connection is successful.
+
+
+![Screenshot_616](https://github.com/selflove7/docker-wordpress/assets/115529646/48e8f880-1d12-4e00-875c-620bf6c70641)
+
+![Screenshot_617](https://github.com/selflove7/docker-wordpress/assets/115529646/42e438b4-23ad-45f0-a47b-3801e1b74000)
+
+![Screenshot_618](https://github.com/selflove7/docker-wordpress/assets/115529646/1f2da54d-ee07-4d4c-96b7-8b8425708a22)
+
+![Screenshot_619](https://github.com/selflove7/docker-wordpress/assets/115529646/bcb35b9c-e431-4abb-9ea1-85005361f1fc)
+
+![Screenshot_620](https://github.com/selflove7/docker-wordpress/assets/115529646/eca0f43e-13dd-4f4f-b084-59b2dc8b2e77)
+
+![Screenshot_621](https://github.com/selflove7/docker-wordpress/assets/115529646/4c182e82-1c9f-4f40-8e26-0a0ccac7204a)
+
+![Screenshot_622](https://github.com/selflove7/docker-wordpress/assets/115529646/c794a8b0-155b-4ea4-8b10-69492d6495d0)
+
+![Screenshot_623](https://github.com/selflove7/docker-wordpress/assets/115529646/dcf22826-f7cf-47e2-af08-38e14ec294ef)
+
+
+
+
+
     
 
