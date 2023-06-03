@@ -209,7 +209,7 @@ Make sure to note down the RDS connection details, such as the <b> endpoint URL,
 
 <h2> Step 5:  To connect WordPress container with the RDS database </h2>
 
-Access the WordPress application through its public IP or DNS.
+Access the WordPress application through its public IP.
 
 Perform necessary WordPress setup steps (e.g., providing website information, creating an admin account).
 
