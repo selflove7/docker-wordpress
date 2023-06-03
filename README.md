@@ -11,7 +11,7 @@
    
     4) Running the Docker container on the VM to host the WordPress application.
 
-    5) Deploying a managed relational database service (RDS) on AWS/Azure in a private subnet.
+    5) Deploying a relational database service (RDS) on AWS in a private subnet.
 
     6) Configuring the WordPress container to connect to the RDS database for data storage.
 
