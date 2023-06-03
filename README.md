@@ -99,10 +99,38 @@ Confirm the destruction by entering <b> "yes" </b> when prompted.
 
 <h2> 3. Build the Docker image, Tag the image and Push the Docker image to Docker Hub and Run the container </h2>
 
-<b> Build the Docker image </b> 
+<b> Build the Docker image </b>
+
+        docker build -t my-wordpress .
         
+ ![Screenshot_605](https://github.com/selflove7/docker-wordpress/assets/115529646/0a77fbd5-c486-4bfa-972c-e477855b6eaf)
+   
+<b> Log in to Docker Hub & Enter your Docker Hub credentials when prompted. </b>
+    
+        docker login
+
 <b> Tag the imageTag the image </b> 
+    
+        docker tag my-wordpress:latest 91469/my-wordpress:v1.0.0
+        
+![Screenshot_606](https://github.com/selflove7/docker-wordpress/assets/115529646/587a88b6-a168-49ff-8aee-f4eee9519525)
 
 <b> Push the Docker image to Docker Hub </b> 
+        
+        docker push 91469/my-wordpress:v1.0.0
+        
+![Screenshot_607](https://github.com/selflove7/docker-wordpress/assets/115529646/ae9917de-8ad5-4e03-b0b7-3840ca3707d4)
+
+![Screenshot_608](https://github.com/selflove7/docker-wordpress/assets/115529646/5afa35f9-d20f-4a5a-99a9-c6e306c84495)
+
+![Screenshot_609](https://github.com/selflove7/docker-wordpress/assets/115529646/933e08c3-7956-48e7-b492-4c4ad0d115c4)
 
 <b> Run the container </b> 
+    
+    docker run -d -p 80:80 -p 443:443 --name my-wordpress-container my-wordpress
+    
+ ![Screenshot_610](https://github.com/selflove7/docker-wordpress/assets/115529646/2e6d4226-e286-46e4-9d89-3040ca066e18)
+
+
+    
+
