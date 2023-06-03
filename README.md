@@ -97,8 +97,12 @@ Confirm the destruction by entering <b> "yes" </b> when prompted.
 
 
 
+<h2> 3. Build the Docker image, Tag the image and Push the Docker image to Docker Hub and Run the container </h2>
 
+<b> Build the Docker image </b> 
+        
+<b> Tag the imageTag the image </b> 
 
+<b> Push the Docker image to Docker Hub </b> 
 
-
-
+<b> Run the container </b> 
