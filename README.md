@@ -1,7 +1,7 @@
 <h1> Terraform and Docker for WordPress Deployment on AWS with RDS </h1>
 
 
-<p> The goal of this project is to deploy a WordPress application on AWS using Terraform for infrastructure provisioning and Docker for containerization. The project includes the following steps: </p>
+<p> The goal of this project is to deploy a WordPress application on AWS using Terraform for infrastructure provisioning and Docker for containerization. This project contains the following steps: </p>
 
     1) Provisioning a virtual machine (VM) in a public subnet using Terraform.
    
