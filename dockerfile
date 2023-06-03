@@ -31,6 +31,7 @@ RUN mkdir -p /var/www/html/wordpress/wp-content/uploads && \
     
 # Expose port 80
 EXPOSE 80
+EXPOSE 443
 
 # Start Apache in the foreground
 CMD ["apache2ctl", "-D", "FOREGROUND"]
