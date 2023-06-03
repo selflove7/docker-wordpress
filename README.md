@@ -44,15 +44,15 @@ The Terraform script <b>(main.tf)</b> for deploying the VM in the public subnet 
 
 <b> Clone the repository to your local machine: </b>
 
-            git clone https://github.com/selflove7/docker-wordpress.git
+     git clone https://github.com/selflove7/docker-wordpress.git
 
 <b> Navigate to the project directory: </b>
 
-            cd docker-wordpress
+     cd docker-wordpress
 
 <b> Initialize the Terraform project:</b>
 
-            terraform init
+     terraform init
              
    ![Screenshot_597](https://github.com/selflove7/docker-wordpress/assets/115529646/c7cfebde-5b4d-40bc-b8c1-1cf70b089293)
       
