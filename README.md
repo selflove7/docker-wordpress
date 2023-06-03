@@ -95,6 +95,52 @@ Confirm the destruction by entering <b> "yes" </b> when prompted.
 ![Screenshot_603](https://github.com/selflove7/docker-wordpress/assets/115529646/f67396a3-2313-4d4a-a7a3-8960ee4b8cb3)
 
 
+<h2> Step 2: To create a Dockerfile for deploying Apache webserver, PHP, and WordPress: </h2>
+
+Create a new file in your project directory and name it <b> Dockerfile </b> (without any file extension).
+
+Open the Dockerfile using a text editor.
+
+In the Dockerfile, you will define the steps to build your Docker image. Here's a Dockerfile for deploying Apache webserver, PHP, and WordPress
+
+                FROM ubuntu
+
+                ARG WORDPRESS_VERSION=latest
+
+                # Set environment variables to avoid interactive prompts
+                ENV DEBIAN_FRONTEND=noninteractive
+                ENV DEBIAN_PRIORITY=critical
+
+                # Install Apache, PHP, and other dependencies
+                RUN apt-get update && \
+                    apt-get install -y apache2 php libapache2-mod-php php-mysql wget && \
+                    apt-get clean && \
+                    rm -rf /var/lib/apt/lists/*
+
+                # Download and extract WordPress files
+                RUN wget -O wordpress.tar.gz https://wordpress.org/latest.tar.gz && \
+                    tar -xvf wordpress.tar.gz -C /var/www/html/ && \
+                    rm wordpress.tar.gz
+
+                # Add the ServerName directive to the Apache configuration
+                RUN echo "ServerName 127.0.0.1" >> /etc/apache2/apache2.conf
+
+                # Set the working directory
+                WORKDIR /var/www/html/wordpress
+
+                # Create the uploads directory and set ownership and permissions
+                RUN mkdir -p /var/www/html/wordpress/wp-content/uploads && \
+                    chown -R www-data:www-data /var/www/html/wordpress && \
+                    chmod -R 755 /var/www/html/wordpress && \
+                    chown -R www-data:www-data /var/www/html/wordpress/wp-content/uploads
+
+                # Expose port 80
+                EXPOSE 80
+                EXPOSE 443
+
+                # Start Apache in the foreground
+                CMD ["apache2ctl", "-D", "FOREGROUND"]
+
 
 
 <h2> Step 3. Build the Docker image, Tag the image and Push the Docker image to Docker Hub and Run the container </h2>
