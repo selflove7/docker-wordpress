@@ -208,7 +208,7 @@ In this step, we will deploy a relational database service (RDS) on AWS in a pri
 Make sure to note down the RDS connection details, such as the <b> endpoint URL, port, database name, master username, and password, </b> as you will need these details to establish the connection between the WordPress container and the RDS database in the next step.
 
 
-<h2> To connect your WordPress container with the RDS database </h2>
+<h2> Step 5:  To connect your WordPress container with the RDS database </h2>
 
 Access the WordPress application through its public IP or DNS.
 
@@ -235,7 +235,19 @@ During the setup, WordPress will attempt to establish a connection with the RDS 
 
 
 
+<b> Official Documentation for References: </b>
 
+For further information and detailed documentation, you can refer to the following official resources:
+
+Terraform Documentation: https://www.terraform.io/docs/index.html
+
+This documentation provides comprehensive information about Terraform, including installation instructions, configuration syntax, available resources, and provider-specific details.
+Docker Documentation: https://docs.docker.com/
+
+The official Docker documentation covers various topics related to Docker, including Dockerfile syntax, container management, networking, and best practices.
+AWS Documentation: https://docs.aws.amazon.com/index.html
+
+The official AWS documentation provides detailed information about the AWS services, including EC2, RDS, VPC, security groups, and more. It offers step-by-step guides, API references, and best practices.
 
     
 
