@@ -208,7 +208,7 @@ In this step, we will deploy a relational database service (RDS) on AWS in a pri
 Make sure to note down the RDS connection details, such as the <b> endpoint URL, port, database name, master username, and password, </b> as you will need these details to establish the connection between the WordPress container and the RDS database in the next step.
 
 
-<h2> Step 5:  To connect your WordPress container with the RDS database </h2>
+<h2> Step 5:  To connect WordPress container with the RDS database </h2>
 
 Access the WordPress application through its public IP or DNS.
 
