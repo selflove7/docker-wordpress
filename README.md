@@ -181,19 +181,19 @@ You can customize the Dockerfile further based on your specific requirements.
 
 In this step, we will deploy a relational database service (RDS) on AWS in a private subnet to ensure enhanced security and isolation.
 
-                1. Open the AWS Management Console and navigate to the RDS service.
+        1. Open the AWS Management Console and navigate to the RDS service.
+               
+        2. Click on  "Create database"  to start the RDS creation process.
                 
-                2. Click on  "Create database"  to start the RDS creation process.
+        3. Select the desired database engine (e.g., MySQL, PostgreSQL, etc.) and specify the required configurations such as DB instance class, storage, and master username/password.
                 
-                3. Select the desired database engine (e.g., MySQL, PostgreSQL, etc.) and specify the required configurations such as DB instance class, storage, and master username/password.
+        4. Choose the appropriate VPC and subnet for the RDS deployment. Select a private subnet to ensure it's not publicly accessible.
                 
-                4. Choose the appropriate VPC and subnet for the RDS deployment. Select a private subnet to ensure it's not publicly accessible.
+        5. Configure the database security group to allow inbound connections from the Docker container hosting the WordPress application. You may need to open the respective database port (e.g., port 3306 for MySQL) in the security group settings.
                 
-                5. Configure the database security group to allow inbound connections from the Docker container hosting the WordPress application. You may need to open the respective database port (e.g., port 3306 for MySQL) in the security group settings.
+        6. Proceed with the remaining RDS configuration options as per your project requirements.
                 
-                6. Proceed with the remaining RDS configuration options as per your project requirements.
-                
-                7. Review the settings and click on  "Create database" to initiate the RDS deployment process.
+        7. Review the settings and click on  "Create database" to initiate the RDS deployment process.                
 
 ![Screenshot_611](https://github.com/selflove7/docker-wordpress/assets/115529646/341926b1-964f-4d27-9c74-0e923b71bdf5)
 
