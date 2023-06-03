@@ -34,7 +34,6 @@ The project demonstrates the use of infrastructure-as-code (IaC) principles with
 <b> 6) Basic Knowledge:</b> Familiarize yourself with basic concepts related to virtual machines, networking, Docker, and relational databases. Understanding these concepts will help you navigate through the project and troubleshoot any issues that may arise.
 
 
-
 By having these prerequisites in place, you'll be well-equipped to proceed with the project and successfully deploy WordPress on AWS/Azure with Terraform, Docker, and RDS.
 
 
@@ -58,19 +57,19 @@ The Terraform script <b>(main.tf)</b> for deploying the VM in the public subnet 
       
 <b> Validate the Terraform configuration:</b>
 
-            terraform validate
+     terraform validate
               
 ![Screenshot_598](https://github.com/selflove7/docker-wordpress/assets/115529646/9703c0b5-7c09-4c80-a228-7737cbd95014)
 
 <b> Generate an execution plan:</b>
 
-            terraform plan
+     terraform plan
             
  ![Screenshot_599](https://github.com/selflove7/docker-wordpress/assets/115529646/972b5e1b-2538-429a-9b2d-1a553499554b)
  
 <b> Apply the Terraform configuration to create the VM:</b>
 
-            terraform apply
+     terraform apply
             
 ![Screenshot_600](https://github.com/selflove7/docker-wordpress/assets/115529646/40bdf6d5-8681-40c3-b059-69dd63f64db9)
 
@@ -80,7 +79,7 @@ Once the VM is provisioned, access the public IP/DNS to verify its availability.
 
 <b> To destroy the infrastructure and clean up resources:</b>
 
-            terraform destroy
+     terraform destroy
             
 Confirm the destruction by entering <b> "yes" </b> when prompted.
 
@@ -103,43 +102,43 @@ Open the Dockerfile using a text editor.
 
 In the Dockerfile, you will define the steps to build your Docker image. Here's a Dockerfile for deploying Apache webserver, PHP, and WordPress
 
-                FROM ubuntu
+        FROM ubuntu
 
-                ARG WORDPRESS_VERSION=latest
+        ARG WORDPRESS_VERSION=latest
 
-                # Set environment variables to avoid interactive prompts
-                ENV DEBIAN_FRONTEND=noninteractive
-                ENV DEBIAN_PRIORITY=critical
+        # Set environment variables to avoid interactive prompts
+        ENV DEBIAN_FRONTEND=noninteractive
+        ENV DEBIAN_PRIORITY=critical
 
-                # Install Apache, PHP, and other dependencies
-                RUN apt-get update && \
-                    apt-get install -y apache2 php libapache2-mod-php php-mysql wget && \
-                    apt-get clean && \
-                    rm -rf /var/lib/apt/lists/*
+        # Install Apache, PHP, and other dependencies
+        RUN apt-get update && \
+            apt-get install -y apache2 php libapache2-mod-php php-mysql wget && \
+            apt-get clean && \
+            rm -rf /var/lib/apt/lists/*
 
-                # Download and extract WordPress files
-                RUN wget -O wordpress.tar.gz https://wordpress.org/latest.tar.gz && \
-                    tar -xvf wordpress.tar.gz -C /var/www/html/ && \
-                    rm wordpress.tar.gz
+        # Download and extract WordPress files
+        RUN wget -O wordpress.tar.gz https://wordpress.org/latest.tar.gz && \
+            tar -xvf wordpress.tar.gz -C /var/www/html/ && \
+            rm wordpress.tar.gz
 
-                # Add the ServerName directive to the Apache configuration
-                RUN echo "ServerName 127.0.0.1" >> /etc/apache2/apache2.conf
+        # Add the ServerName directive to the Apache configuration
+        RUN echo "ServerName 127.0.0.1" >> /etc/apache2/apache2.conf
 
-                # Set the working directory
-                WORKDIR /var/www/html/wordpress
+        # Set the working directory
+        WORKDIR /var/www/html/wordpress
 
-                # Create the uploads directory and set ownership and permissions
-                RUN mkdir -p /var/www/html/wordpress/wp-content/uploads && \
-                    chown -R www-data:www-data /var/www/html/wordpress && \
-                    chmod -R 755 /var/www/html/wordpress && \
-                    chown -R www-data:www-data /var/www/html/wordpress/wp-content/uploads
+        # Create the uploads directory and set ownership and permissions
+        RUN mkdir -p /var/www/html/wordpress/wp-content/uploads && \
+            chown -R www-data:www-data /var/www/html/wordpress && \
+            chmod -R 755 /var/www/html/wordpress && \
+            chown -R www-data:www-data /var/www/html/wordpress/wp-content/uploads
 
-                # Expose port 80
-                EXPOSE 80
-                EXPOSE 443
+        # Expose port 80
+        EXPOSE 80
+        EXPOSE 443
 
-                # Start Apache in the foreground
-                CMD ["apache2ctl", "-D", "FOREGROUND"]
+        # Start Apache in the foreground
+        CMD ["apache2ctl", "-D", "FOREGROUND"]
 
 
 You can customize the Dockerfile further based on your specific requirements.
@@ -173,7 +172,7 @@ You can customize the Dockerfile further based on your specific requirements.
 
 <b> Run the container </b> 
     
-    docker run -d -p 80:80 -p 443:443 --name my-wordpress-container my-wordpress
+        docker run -d -p 80:80 -p 443:443 --name my-wordpress-container my-wordpress
     
  ![Screenshot_610](https://github.com/selflove7/docker-wordpress/assets/115529646/2e6d4226-e286-46e4-9d89-3040ca066e18)
 
