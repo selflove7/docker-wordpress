@@ -234,6 +234,10 @@ During the setup, WordPress will attempt to establish a connection with the RDS 
 
 
 
+# To access the deployed WordPress application, visit the following link: http://13.233.129.64/wordpress/
+
+
+
 <b> Official Documentation for References: </b>
 
 For further information and detailed documentation, you can refer to the following official resources:
